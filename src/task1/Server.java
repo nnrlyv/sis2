@@ -7,7 +7,6 @@ public class Server {
     public static void main(String[] args) {
         try (ServerSocket serverSocket = new ServerSocket(12345)) {
             System.out.println("Server is waiting for a client connection...");
-
             try (Socket clientSocket = serverSocket.accept();
                  BufferedReader input = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                  PrintWriter output = new PrintWriter(clientSocket.getOutputStream(), true)) {
